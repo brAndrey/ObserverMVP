@@ -1,6 +1,12 @@
-package com.example.observermvp;
+package com.example.observermvp.activities;
 
 import android.view.View;
+
+import com.example.observermvp.activities.MainActivityContract;
+import com.example.observermvp.activities.MainActivityModel;
+
+//import MainActivityContract;
+//import MainActivityModel;
 
 public class MainActivityPresenter implements MainActivityContract.Presenter {
 

@@ -1,4 +1,5 @@
-package com.example.observermvp;
+
+package com.example.observermvp.activities;
 
 public interface MainActivityContract {
 

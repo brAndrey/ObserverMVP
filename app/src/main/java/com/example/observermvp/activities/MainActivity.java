@@ -1,4 +1,4 @@
-package com.example.observermvp;
+package com.example.observermvp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -6,35 +6,28 @@ import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.jakewharton.rxbinding.view.RxView;
+import com.example.observermvp.Fragment1;
+import com.example.observermvp.screens.Fragment2;
+//import MainActivityPresenter;
+import com.example.observermvp.R;
+import com.jakewharton.rxbinding.widget.RxTextView;
+//import MainActivityContract;
 
-import butterknife.BindView;
+public class MainActivity extends AppCompatActivity  implements MainActivityContract.View {
 
-public class MainActivity extends AppCompatActivity implements MainActivityContract.View {
 
-  //  @BindView(R.id.bottom)
-    Button mBotton;
-//
- //   @BindView(R.id.textView)
-    TextView mTextView;
 
     private MainActivityContract.Presenter mPresenter;
     private FrameLayout framegmentConteyner;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
     //    getLifecycle().addObserver(getData);
 
@@ -43,8 +36,10 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
         String name = new Object(){}.getClass().getEnclosingMethod().getName();
         Log.e("MainActivity",name);
         //{}.javaClass.enclosingMethod?.name
+//
+//        framegmentConteyner = (FrameLayout) findViewById(R.id.fragmentConteiner);
+//        FrameLayout framegmentConteyner = (FrameLayout) findViewById(R.id.fragmentConteiner);
 
-        framegmentConteyner = (FrameLayout) findViewById(R.id.fragmentConteiner);
 
         FragmentManager fm = getSupportFragmentManager();
 
@@ -52,11 +47,19 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
 
         if (fragment == null) {
             fragment = new Fragment1();
-            fm.beginTransaction().add(R.id.fragmentConteiner, fragment)
+            fm.beginTransaction().
+                    add(R.id.fragmentConteiner, fragment)
                     .commit();
         }
 
 
+        Fragment fragment1 = fm.findFragmentById(R.id.fragmentConteiner2);
+        if (fragment1 == null) {
+            fragment1 = new Fragment2();
+            fm.beginTransaction().
+                    add(R.id.fragmentConteiner2, fragment1)
+                    .commit();
+        }
 
 //        if (savedInstanceState == null) {
 //            getSupportFragmentManager().beginTransaction()
@@ -75,15 +78,21 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
 //
 ////        RxView.clicks(mBotton).subscribe(aVoid ->
 ////                Toast.makeText(MainActivity.this,"RxView. Clisk",Toast.LENGTH_SHORT).show());
-//
+
+//RxTextView.textChanges(editText)
+//           .subscribe(charSequence -> {
+//               textView.setText(charSequence);
+//           });
 //
 //        mBotton.setOnClickListener((view)-> {
 //                mPresenter.onClick(view);}
 //        );
+
+
     }
 
     @Override
     public void setViewData(String data) {
-        mTextView.setText(data);
+        //mTextView.setText(data);
     }
 }
