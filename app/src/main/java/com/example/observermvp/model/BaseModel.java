@@ -1,5 +1,7 @@
 package com.example.observermvp.model;
 
+import android.util.Log;
+
 public class BaseModel {
 
     private int id;
@@ -9,6 +11,27 @@ public class BaseModel {
     private int energy;
     private int power;
     private long time;
+
+
+
+//    @Override
+//    public String toString() {
+//        return "AppInfo{" +
+//                "packageName='" + packageName + '\'' +"/n"+
+//                ", versionCode=" + versionCode +"/n"+
+//                ", versionName='" + versionName + '\'' +"/n"+
+//                ", name='" + name + '\'' +
+//                ", icon=" + icon +
+//                '}';
+//    }
+
+    @Override
+    public String toString(){
+
+        Log.i(" BaseModel ", weight+" "+speed+" "+energy);
+
+        return null;
+    }
 
     public String getDevais() {
         return devais;

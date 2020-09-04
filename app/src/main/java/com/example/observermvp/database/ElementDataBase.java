@@ -1,8 +1,11 @@
 package com.example.observermvp.database;
 
 import com.example.observermvp.model.BaseModel;
+import com.example.observermvp.utils.MathClass;
 
-public class ElementDataBase {
+import java.util.Observable;
+
+public class ElementDataBase  extends Observable {
 
     private static ElementDataBase INSTANCE;
     BaseModel baseModel;
@@ -24,6 +27,15 @@ public class ElementDataBase {
     public void setBaseModel(int weight,int speed ){
         baseModel.setWeight(weight);
         baseModel.setSpeed(speed);
+        baseModel.setEnergy(MathClass.Energy(weight,speed));
+        baseModel.toString();
+        setChanged();
+        notifyObservers();
+
+    };
+
+    public BaseModel getBaseModel(){
+        return baseModel;
     };
 
 }

@@ -6,20 +6,15 @@ import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.TextView;
 
 import com.example.observermvp.Fragment1;
-import com.example.observermvp.screens.Fragment2;
+import com.example.observermvp.screens.second_fragment.Fragment2;
 //import MainActivityPresenter;
 import com.example.observermvp.R;
-import com.jakewharton.rxbinding.widget.RxTextView;
 //import MainActivityContract;
 
 public class MainActivity extends AppCompatActivity  implements MainActivityContract.View {
-
-
 
     private MainActivityContract.Presenter mPresenter;
     private FrameLayout framegmentConteyner;
@@ -96,3 +91,4 @@ public class MainActivity extends AppCompatActivity  implements MainActivityCont
         //mTextView.setText(data);
     }
 }
+// over https://android-tools.ru/coding/ispolzovanie-patterna-mvp-v-android/
