@@ -23,7 +23,7 @@ public class FarstFragmentPresenter implements FragmentFirstContracts.Presenter 
 
 
     @Override
-    public void onClick(int weight,int speed) {
+    public void onClick(double weight,double speed) {
 
         mModel.setData(weight,speed);
 

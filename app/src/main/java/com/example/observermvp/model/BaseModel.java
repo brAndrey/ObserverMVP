@@ -6,9 +6,9 @@ public class BaseModel {
 
     private int id;
     private String devais;
-    private int weight;
-    private int speed;
-    private int energy;
+    private double weight;
+    private double speed;
+    private double energy;
     private int power;
     private long time;
 
@@ -41,27 +41,27 @@ public class BaseModel {
         this.devais = devais;
     }
 
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 
-    public int getSpeed() {
+    public double getSpeed() {
         return speed;
     }
 
-    public void setSpeed(int speed) {
+    public void setSpeed(double speed) {
         this.speed = speed;
     }
 
-    public int getEnergy() {
+    public double getEnergy() {
         return energy;
     }
 
-    public void setEnergy(int energy) {
+    public void setEnergy(double energy) {
         this.energy = energy;
     }
 

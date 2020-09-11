@@ -8,7 +8,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.FrameLayout;
 
-import com.example.observermvp.Fragment1;
+
+import com.example.observermvp.screens.farstFragment.Fragment1;
 import com.example.observermvp.screens.second_fragment.Fragment2;
 //import MainActivityPresenter;
 import com.example.observermvp.R;
@@ -24,17 +25,10 @@ public class MainActivity extends AppCompatActivity  implements MainActivityCont
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-    //    getLifecycle().addObserver(getData);
-
         mPresenter = new MainActivityPresenter(this);
 
         String name = new Object(){}.getClass().getEnclosingMethod().getName();
-        Log.e("MainActivity",name);
-        //{}.javaClass.enclosingMethod?.name
-//
-//        framegmentConteyner = (FrameLayout) findViewById(R.id.fragmentConteiner);
-//        FrameLayout framegmentConteyner = (FrameLayout) findViewById(R.id.fragmentConteiner);
-
+       // Log.e("MainActivity",name);
 
         FragmentManager fm = getSupportFragmentManager();
 
@@ -56,32 +50,11 @@ public class MainActivity extends AppCompatActivity  implements MainActivityCont
                     .commit();
         }
 
-//        if (savedInstanceState == null) {
-//            getSupportFragmentManager().beginTransaction()
-//                    .add(R.id.fragmentConteiner, new Fragment1())
-//                    .commit();
-//        }
 
     }
 
     @Override
     public void initView() {
-
-//        mBotton = findViewById(R.id.bottom);
-//        mTextView = findViewById(R.id.textView);
-//
-//
-////        RxView.clicks(mBotton).subscribe(aVoid ->
-////                Toast.makeText(MainActivity.this,"RxView. Clisk",Toast.LENGTH_SHORT).show());
-
-//RxTextView.textChanges(editText)
-//           .subscribe(charSequence -> {
-//               textView.setText(charSequence);
-//           });
-//
-//        mBotton.setOnClickListener((view)-> {
-//                mPresenter.onClick(view);}
-//        );
 
 
     }

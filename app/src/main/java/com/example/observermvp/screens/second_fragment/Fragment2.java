@@ -16,7 +16,7 @@ import com.example.observermvp.R;
 import com.example.observermvp.screens.farstFragment.FarstFragmentPresenter;
 import com.jakewharton.rxbinding.view.RxView;
 
-public class Fragment2 extends Fragment implements FragmentSecondContracts.View, incomingFragmentSecond{
+public class Fragment2 extends Fragment implements FragmentSecondContracts.View{
 
     TextView textView;
     Button button;
@@ -27,21 +27,21 @@ public class Fragment2 extends Fragment implements FragmentSecondContracts.View,
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_second,container,false);
-        mPresenter = new SecondFragmentPresenter(this);
+        mPresenter = new SecondFragmentPresenter(this,getLifecycle());
         return view;
     }
 
     @Override
     public void initView() {
       textView = view.findViewById(R.id.textViewFragment2);
-      button=view.findViewById(R.id.buttonFragment2);
-
-      RxView.clicks(button).subscribe(aVoid -> {
-                    Log.i("RxView ", " клик ");
-                    mPresenter.onClick();
-                }
-
-        );
+//      button=view.findViewById(R.id.buttonFragment2);
+//
+//      RxView.clicks(button).subscribe(aVoid -> {
+//                    Log.i("RxView ", " клик ");
+//                    mPresenter.onClick();
+//                }
+//
+//        );
 
     }
 
@@ -51,6 +51,14 @@ public class Fragment2 extends Fragment implements FragmentSecondContracts.View,
     }
 
     @Override
-    public void incomingPresenter() {
+    public void onDestroy() {
+        super.onDestroy();
     }
+
+    //    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        mUserDataRepositoryObservable.deleteObserver(this);
+//    }
+
 }

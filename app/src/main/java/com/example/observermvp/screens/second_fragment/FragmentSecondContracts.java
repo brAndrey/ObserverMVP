@@ -18,9 +18,15 @@ public interface FragmentSecondContracts {
 
         BaseModel setData();
 
+
     }
 
     interface Presenter {
         void onClick ();
+
+        void onDestroyFragment();
+
     }
+
+
 }

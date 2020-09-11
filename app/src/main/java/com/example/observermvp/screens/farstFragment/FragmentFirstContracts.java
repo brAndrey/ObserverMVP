@@ -13,11 +13,11 @@ public interface FragmentFirstContracts  {
     interface Model {
         BaseModel gatData();
 
-        void setData(int weight, int speed);
+        void setData(double weight, double speed);
 
     }
 
     interface Presenter {
-        void onClick (int weight,int speed);
+        void onClick (double weight,double speed);
     }
 }

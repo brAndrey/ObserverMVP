@@ -8,13 +8,13 @@ import com.example.observermvp.model.BaseModel;
 import java.util.Observable;
 import java.util.Observer;
 
-public class SecondFragmentModel extends Observable implements FragmentSecondContracts.Model, Observer {
+public class SecondFragmentModel  implements FragmentSecondContracts.Model {
     private Observable obsElementDataBase;
 
-    public SecondFragmentModel() {
-        obsElementDataBase = ElementDataBase.getInstance();
-        obsElementDataBase.addObserver(this::update);
-    }
+//    public SecondFragmentModel() {
+//        obsElementDataBase = ElementDataBase.getInstance();
+//        obsElementDataBase.addObserver(this::update);
+//    }
 
 //    mUserDataRepositoryObservable = UserDataRepository.getInstance();
 //        mUserDataRepositoryObservable.addObserver(this);
@@ -34,13 +34,10 @@ public class SecondFragmentModel extends Observable implements FragmentSecondCon
     }
 
 
-    @Override
-    public void update(Observable observable, Object o) {
-        ElementDataBase elementDataBase = ElementDataBase.getInstance();
-        BaseModel baseModel = elementDataBase.getBaseModel();
-        Log.i("update ", String.valueOf(baseModel.getEnergy()) );
-        setChanged();
-        notifyObservers();
-
-    }
+//    @Override
+//    public void update(Observable observable, Object o) {
+//        // при приходе от репозитория сообщения о его изменении передаём что изменились сами
+//        setChanged();
+//        notifyObservers();
+//    }
 }

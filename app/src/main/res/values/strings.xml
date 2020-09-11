@@ -2,5 +2,6 @@
     <string name="app_name">ObserverMVP</string>
     <string name="mag">36dp</string>
     <string name="height">12dp</string>
+    <string name="lenthEditText">120dp</string>
 
 </resources>

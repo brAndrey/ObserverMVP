@@ -24,11 +24,12 @@ public class ElementDataBase  extends Observable {
         return INSTANCE;
     }
 
-    public void setBaseModel(int weight,int speed ){
+    public void setBaseModel(double weight,double speed ){
         baseModel.setWeight(weight);
         baseModel.setSpeed(speed);
         baseModel.setEnergy(MathClass.Energy(weight,speed));
         baseModel.toString();
+        // оповещаем подписавшихся о факте изменения
         setChanged();
         notifyObservers();
 
