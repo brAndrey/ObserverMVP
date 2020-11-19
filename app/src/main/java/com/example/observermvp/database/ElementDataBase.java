@@ -11,7 +11,6 @@ public class ElementDataBase  extends Observable {
     BaseModel baseModel;
 
     private ElementDataBase() {
-
       baseModel  = new BaseModel();
     }
 

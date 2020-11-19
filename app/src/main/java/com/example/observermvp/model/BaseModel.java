@@ -28,7 +28,7 @@ public class BaseModel {
     @Override
     public String toString(){
 
-        Log.i(" BaseModel ", weight+" "+speed+" "+energy);
+        Log.i(" BaseModel ", weight+" "+speed+" "+energy+"  "+System.currentTimeMillis());
 
         return null;
     }

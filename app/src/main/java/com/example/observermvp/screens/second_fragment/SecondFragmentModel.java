@@ -21,7 +21,7 @@ public class SecondFragmentModel  implements FragmentSecondContracts.Model {
 
     @Override
     public String getData() {
-
+        Log.e("SecondFragmentModel", "getData   "+System.currentTimeMillis());
         ElementDataBase elementDataBase = ElementDataBase.getInstance();
         BaseModel baseModel = elementDataBase.getBaseModel();
         return String.valueOf(baseModel.getEnergy()) ;

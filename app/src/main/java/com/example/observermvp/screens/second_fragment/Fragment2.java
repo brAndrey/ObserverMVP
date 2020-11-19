@@ -13,8 +13,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.observermvp.R;
-import com.example.observermvp.screens.farstFragment.FarstFragmentPresenter;
-import com.jakewharton.rxbinding.view.RxView;
+//import com.example.observermvp.screens.farstFragment.FarstFragmentPresenter;
+//import com.jakewharton.rxbinding.view.RxView;
 
 public class Fragment2 extends Fragment implements FragmentSecondContracts.View{
 

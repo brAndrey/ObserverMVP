@@ -13,7 +13,7 @@ public class FarstFragmentModel implements FragmentFirstContracts.Model {
 
     @Override
     public void setData(double weight, double speed) {
-        Log.e("FarstFragmentModel", "setData "+weight+ " "+speed );
+        Log.e("FarstFragmentModel", "setData "+weight+ " "+speed +"  "+System.currentTimeMillis());
         ElementDataBase elementDataBase = ElementDataBase.getInstance();
         elementDataBase.setBaseModel(weight,speed);
 //        MaySiglton maySiglton = MaySiglton.getInstance();
